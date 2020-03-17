@@ -4,15 +4,15 @@ pygame.init()
 
 #edit to start a different game
 BOARDS = [
-    [7, 8, 0, 4, 0, 0, 1, 2, 0],
-    [6, 0, 0, 0, 7, 5, 0, 0, 9],
-    [0, 0, 0, 6, 0, 1, 0, 7, 8],
-    [0, 0, 7, 0, 4, 0, 2, 6, 0],
-    [0, 0, 1, 0, 5, 0, 9, 3, 0],
-    [9, 0, 4, 0, 6, 0, 0, 0, 5],
-    [0, 7, 0, 3, 0, 0, 0, 1, 2],
-    [1, 2, 0, 0, 0, 7, 4, 0, 0],
-    [0, 4, 9, 2, 0, 6, 0, 0, 7]
+    [8, 9, 2, 0, 0, 3, 0, 1, 4],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 6, 8, 0, 7, 0],
+    [4, 5, 0, 0, 8, 0, 0, 0, 1],
+    [0, 0, 8, 0, 0, 0, 2, 0, 0],
+    [1, 0, 3, 7, 0, 0, 5, 0, 0],
+    [0, 7, 1, 0, 0, 6, 0, 5, 0],
+    [5, 0, 9, 2, 0, 0, 0, 8, 0],
+    [6, 0, 0, 0, 0, 7, 0, 0, 9]
     ]
 
 margin = 20
@@ -209,7 +209,7 @@ class SudokuUI():
                 self.game.puzzle[row][col] = i
                 self.row,self.col = current[0],current[1]
                 self.draw()
-                pygame.time.delay(250)
+                pygame.time.delay(50)
                 pygame.display.update()
                 if(self.solve()):
                     return True
@@ -261,6 +261,6 @@ if __name__ == '__main__':
                 graphics.cellClicked(position)
             if(event.type == pygame.KEYDOWN):
                 if(event.unicode in "123456789" and (graphics.col,graphics.row) != (-1,-1)):
-                    game.puzzle[something.row][something.col] = int(event.unicode)
+                    game.puzzle[graphics.row][graphics.col] = int(event.unicode)
                     graphics.draw()
         pygame.display.update()
