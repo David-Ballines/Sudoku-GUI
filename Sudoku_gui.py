@@ -1,4 +1,4 @@
-import pygame, sys, json 
+import pygame, sys
 
 pygame.init()
 
@@ -208,7 +208,7 @@ class SudokuUI():
             if(self.game.check(self.game.puzzle,(row,col),i)):
                 self.game.puzzle[row][col] = i
                 self.row,self.col = current[0],current[1]
-                #can uncomment next two lines to show how the solving algorithm works
+                #can uncomment these lines to show how the solving algorithm works
                 #self.draw()
                 #pygame.display.update()
                 if(self.solve()):
