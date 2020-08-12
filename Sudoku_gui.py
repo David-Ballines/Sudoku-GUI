@@ -2,7 +2,7 @@ import pygame, sys, json
 
 pygame.init()
 
-#edit to start a different game
+#edit starting BOARDS to start a different game
 BOARDS = [
     [8, 9, 2, 0, 0, 3, 0, 1, 4],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -208,9 +208,9 @@ class SudokuUI():
             if(self.game.check(self.game.puzzle,(row,col),i)):
                 self.game.puzzle[row][col] = i
                 self.row,self.col = current[0],current[1]
-                self.draw()
-                pygame.time.delay(50)
-                pygame.display.update()
+                #can uncomment next two lines to show how the solving algorithm works
+                #self.draw()
+                #pygame.display.update()
                 if(self.solve()):
                     return True
                 self.game.puzzle[row][col] = 0
