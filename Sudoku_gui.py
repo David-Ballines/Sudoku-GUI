@@ -257,6 +257,7 @@ if __name__ == '__main__':
                 if(graphics.hintButton.isOver(position)):
                     graphics.hint()
                 if(graphics.solveButton.isOver(position)):
+                    graphics.restart()
                     graphics.solve()
                 graphics.cellClicked(position)
             if(event.type == pygame.KEYDOWN):
